@@ -42,7 +42,7 @@ deregister_eis()
     gpasswd -d $adu_user aziotks > /dev/null
 
     echo "Restart IoT Identity Service"
-    systemctl restart aziot-{identity,cert,tpm,key}d
+    #systemctl restart aziot-{identity,cert,tpm,key}d
 }
 
 do_remove_tasks() {
@@ -50,7 +50,7 @@ do_remove_tasks() {
         
         # The adu-agent unit file is removed after 'prerm remove' step.
         # We just need to reload the daemon here.
-        systemctl daemon-reload
+        #systemctl daemon-reload
 
         remove_adu_users_and_group
         

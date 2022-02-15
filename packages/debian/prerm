@@ -11,8 +11,8 @@ adu_agent_unit_file=/usr/lib/systemd/system/adu-agent.service
 deregister_daemon()
 {
     # Stop and remove adu-agent service from the failed services list. No-op if never failed earlier.
-    systemctl stop $adu_agent_service
-    systemctl reset-failed $adu_agent_service
+    #systemctl stop $adu_agent_service
+    #systemctl reset-failed $adu_agent_service
 }
 
 case "$1" in
