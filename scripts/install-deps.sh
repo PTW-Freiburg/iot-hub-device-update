@@ -61,7 +61,7 @@ install_do_deps_distro=""
 # Dependencies packages
 aduc_packages=('git' 'make' 'build-essential' 'cmake' 'ninja-build' 'libcurl4-openssl-dev' 'libssl-dev' 'uuid-dev' 'python2.7' 'lsb-release' 'curl' 'wget' 'pkg-config')
 static_analysis_packages=('clang' 'clang-tidy' 'cppcheck')
-compiler_packages=("gcc-[68]")
+compiler_packages=("gcc-10")
 do_packages=('libproxy-dev' 'libssl-dev' 'zlib1g-dev' 'libboost-all-dev')
 
 print_help() {
@@ -115,12 +115,6 @@ do_install_aduc_packages() {
 
     # The latest version of gcc available on Debian is gcc-6. We install that version if we are
     # building for Debian, otherwise we install gcc-8 for Ubuntu.
-    OS=$(lsb_release --short --id)
-    if [[ $OS == "Debian" ]]; then
-        $SUDO apt-get install --yes gcc-6 g++-6 || return
-    else
-        $SUDO apt-get install --yes gcc-8 g++-8 || return
-    fi
 
     echo "Installing packages required for static analysis..."
 
