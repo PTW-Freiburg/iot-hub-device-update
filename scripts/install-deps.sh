@@ -288,9 +288,9 @@ do_install_azure_blob_storage_file_upload_utility() {
 
     local azure_storage_cpplite_url
     if [[ $use_ssh == "true" ]]; then
-        azure_storage_cpplite_url=git@github.com:Azure/azure-blob-storage-file-upload-utility.git
+        azure_storage_cpplite_url=git@github.com:PTW-Freiburg/azure-blob-storage-file-upload-utility.git
     else
-        azure_storage_cpplite_url=https://github.com/Azure/azure-blob-storage-file-upload-utility.git
+        azure_storage_cpplite_url=https://github.com/PTW-Freiburg/azure-blob-storage-file-upload-utility.git
     fi
 
     echo -e "Cloning Azure Blob Storage File Upload Uility ...\n\tBranch: $azure_blob_storage_file_upload_utility_ref\n\t Folder: $abs_fuu_dir"
