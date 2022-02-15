@@ -52,8 +52,8 @@ install_azure_blob_storage_file_upload_utility=false
 azure_blob_storage_file_upload_utility_ref=main
 
 # DO Deps
-default_do_ref=v0.8.2
-default_do_deps_distro=ubuntu1804
+default_do_ref=feature/debian11-arm64-build
+default_do_deps_distro=debian11
 install_do=false
 do_ref=$default_do_ref
 install_do_deps_distro=""
@@ -243,9 +243,9 @@ do_install_do() {
 
     local do_url
     if [[ $use_ssh == "true" ]]; then
-        do_url=git@github.com:Microsoft/do-client.git
+        do_url=git@github.com:PTW-Freiburg/do-client.git
     else
-        do_url=https://github.com/Microsoft/do-client.git
+        do_url=https://github.com/PTW-Freiburg/do-client.git
     fi
 
     git clone --recursive --single-branch --branch $do_ref --depth 1 $do_url . || return
