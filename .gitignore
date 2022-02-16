@@ -29,3 +29,5 @@ cscope.po.out
 out/
 build/
 Testing/
+
+out-arm64/
