@@ -252,8 +252,9 @@ register_adu_user_and_process_with_eis() {
 
 register_and_enable_daemon()
 {
-    #systemctl daemon-reload
-    #systemctl enable adu-agent
+    echo "Do nothing in register and enable daemon"
+    # systemctl daemon-reload
+    # systemctl enable adu-agent
 }
 
 case "$1" in
