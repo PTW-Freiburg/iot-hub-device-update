@@ -107,6 +107,7 @@ target_compile_definitions (
             ADUSHELL_FILE_PATH="${ADUSHELL_FILE_PATH}"
             DO_FILE_GROUP="${DO_FILE_GROUP}"
             DO_FILE_USER="${DO_FILE_USER}"
+            _ADU_DEBUG=1
             SYSLOG_FILE_GROUP="${SYSLOG_FILE_GROUP}")
 
 if (ADUC_PLATFORM_LAYER STREQUAL "simulator")
