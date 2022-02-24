@@ -213,13 +213,13 @@ ADUC_Result EnsureStepsWorkflowsCreated(const ADUC_WorkflowHandle handle)
                 workflow_set_id(childHandle, STRING_c_str(childId));
                 STRING_delete(childId);
                 childId = nullptr;
-#if _ADU_DEBUG
+//#if _ADU_DEBUG
                 char* childManifest = workflow_get_serialized_update_manifest(childHandle, true);
                 Log_Debug("##########\n# Successfully created workflow object for child#%s\n# Handle:0x%x\n# Manifest:\n%s\n", workflow_peek_id(childHandle),
                 childHandle,
                 childManifest);
                 workflow_free_string(childManifest);
-#endif
+//#endif
             }
 
             if (!workflow_insert_child(handle, -1, childHandle))
