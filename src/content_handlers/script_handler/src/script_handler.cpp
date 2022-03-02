@@ -503,13 +503,13 @@ static ADUC_Result ScriptHandler_PerformAction(const std::string& action, const 
         aduShellArgs.emplace_back(a);
     }
 
-    //#if _ADU_DEBUG
+    #if _ADU_DEBUG
     for (const auto a : aduShellArgs)
     {
         ss << " " << a;
     }
     Log_Debug("##########\n# ADU-SHELL ARGS:\n##########\n %s", ss.str().c_str());
-    //#endif
+    #endif
 
     exitCode = ADUC_LaunchChildProcess(adushconst::adu_shell, aduShellArgs, scriptOutput);
     if (exitCode != 0)
