@@ -113,9 +113,8 @@ do_install_aduc_packages() {
 
     $SUDO apt-get install --yes "${aduc_packages[@]}" || return
 
-    # The latest version of gcc available on Debian is gcc-6. We install that version if we are
-    # building for Debian, otherwise we install gcc-8 for Ubuntu.
-
+    $SUDO apt-get install --yes gcc-10 g++-10 || return
+ 
     echo "Installing packages required for static analysis..."
 
     # The following is a workaround as IoT SDK references the following paths which don't exist
