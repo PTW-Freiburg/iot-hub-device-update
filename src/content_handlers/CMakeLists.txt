@@ -41,5 +41,3 @@ add_subdirectory (swupdate_handler)
 if (${ADUC_PLATFORM_LAYER} STREQUAL "simulator")
     target_compile_definitions (${PROJECT_NAME} PUBLIC ADUC_SIMULATOR_MODE=1)
 endif ()
-
-target_compile_definitions (${PROJECT_NAME} PUBLIC _ADU_DEBUG=1)
