@@ -1,13 +1,16 @@
-FROM	debian:bullseye-20210902
+ARG     BASE_IMAGE_VERSION=bullseye-20210902-slim
 
-COPY	scripts/install-deps.sh        /tmp
+FROM    debian:${BASE_IMAGE_VERSION}
+
+COPY    scripts/install-deps.sh /tmp
 COPY    apt-sources.list        /etc/apt/sources.list
 
 RUN     apt-get update -y \
         && apt-get install -y \
-        --no-install-recommends 
+        --no-install-recommends
 
-RUN 	/tmp/install-deps.sh -a --install-packages --install-do-deps-distro debian11
+RUN     /tmp/install-deps.sh -a --install-packages --install-do-deps-distro debian11
 
-VOLUME /code
+VOLUME  /code
+
 WORKDIR /code
