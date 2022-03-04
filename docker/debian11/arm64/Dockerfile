@@ -9,7 +9,7 @@ RUN     apt-get update -y \
         && apt-get install -y \
         --no-install-recommends
 
-RUN     /tmp/install-deps.sh -a --install-packages --install-do-deps-distro debian11
+RUN     /tmp/install-deps.sh --install-all-deps --install-do-deps-distro debian11
 
 VOLUME  /code
 
