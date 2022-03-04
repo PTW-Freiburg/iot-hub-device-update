@@ -14,7 +14,7 @@ ARG     AZURE_IOT_SDK_SOURCE_BRANCH=LTS_01_2022_Ref01
 ARG     AZURE_BLOB_STORAGE_FILE_UPLOAD_UILITY_SOURCE_BRANCH=main
 ARG     CATCH2_SOURCE_BRANCH=v2.13.8
 
-RUN     /tmp/install-deps.sh -a --install-do-deps-distro debian11 --do-ref ${DO_CLIENT_SOURCE_BRANCH} --azure-iot-sdk-ref ${AZURE_IOT_SDK_SOURCE_BRANCH} --abs-file-upload-utility-ref ${AZURE_BLOB_STORAGE_FILE_UPLOAD_UILITY_SOURCE_BRANCH} --catch2-ref
+RUN     /tmp/install-deps.sh -a --install-packages --install-do-deps-distro debian11 --do-ref ${DO_CLIENT_SOURCE_BRANCH} --azure-iot-sdk-ref ${AZURE_IOT_SDK_SOURCE_BRANCH} --abs-file-upload-utility-ref ${AZURE_BLOB_STORAGE_FILE_UPLOAD_UILITY_SOURCE_BRANCH} --catch2-ref
 
 VOLUME  /code
 
